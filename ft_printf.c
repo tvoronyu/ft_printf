@@ -106,10 +106,10 @@ int ft_printf(const char *format, ... )
 // 	// ft_printf("fefefef%%\n", 24);
 // 	// ft_printf("\n\nfefefef%d\n\n\n", 24, 42);
 // 	// ft_printf("%42.23L+- #f%42.23L+- #c%42.23L+- #s%42.23L+- #p%42.23L+- #d%42.23L+- #i%42.23L+- #o%42.23L+- #u%42.23L+- #x%42.23L+0- #0000000X%042.23L+- #X\n", 9223372036854775807);
-// 	printf("@moulitest: %05.d %.0d", 0, 0);
+// 	printf("@moulitest: %#.o %#.0o", 0, 0);
 
 
-// 	ft_printf("@moulitest: %05.d %.0d", 0, 0);
+// 	ft_printf("@moulitest: %#.o %#.0o", 0, 0);
 	
 // 	// system("leaks a.out");
 // 	return (0);

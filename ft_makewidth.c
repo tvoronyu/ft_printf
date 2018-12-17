@@ -47,15 +47,14 @@ void	ft_makewidth(list *ptr)
 {
 	long long	i;
 	char		*tmp;
-	char		*tmp_2;
 
 	i = 0;
 	if (ptr->ptr_parse->flag_dot != 0)
-		ft_makewidth_is_width(ptr, tmp, tmp_2, i);
+		ft_makewidth_is_width(ptr, NULL, NULL, i);
 	else
 	{
 		if ((i = ptr->ptr_parse->flag_width - ft_strlen(ptr->tmp)) > 0)
-			ft_width_help_1(ptr, tmp, tmp_2, i);
+			ft_width_help_1(ptr, NULL, NULL, i);
 	}
 	if (!ptr->ptr_parse->flag_dot && !ptr->ptr_parse->flag_width
 		&& ptr->ptr_parse->flag_space

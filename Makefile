@@ -13,6 +13,7 @@ FILENAMES	=	ft_printf.c \
 				ft_makewidth.c \
 				ft_makedot.c \
 				ft_makedot_oxu.c \
+				ft_makewidth_oxu.c \
 
 NAME = libftprintf.a
 
@@ -64,6 +65,8 @@ re: fclean all
 # 		pf_lib_1.c \
 # 		ft_makedot.c \
 # 		ft_makewidth.c \
+# 		ft_makedot_oxu.c \
+# 		ft_makewidth_oxu.c \
 
 # CC = gcc
 

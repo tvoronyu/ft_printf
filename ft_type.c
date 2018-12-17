@@ -93,34 +93,34 @@ void	ft_makewidth_2(list *ptr)
 	// free(ptr->ptr_parse->tmp);
 }
 
-void	ft_make_hash(list *ptr)
-{
-	char *str;
+// void	ft_make_hash(list *ptr)
+// {
+// 	char *str;
 
-	if (ptr->ptr_parse->flag_hash)
-	{
-		if (*ptr->form == 'x' && *ptr->ptr_parse->tmp != '0')
-		{
-			str = ft_strjoin("0x", ptr->ptr_parse->tmp);
-			free(ptr->ptr_parse->tmp);
-			ptr->ptr_parse->tmp = str;
-		}
-		if (*ptr->form == 'X' && *ptr->ptr_parse->tmp != '0')
-		{
-			str = ft_strjoin("0X", ptr->ptr_parse->tmp);
-			free(ptr->ptr_parse->tmp);
-			ptr->ptr_parse->tmp = str;
-		}
-		if (*ptr->form == 'o' && *ptr->ptr_parse->tmp != '0')
-		{
-			str = ft_strjoin("0", ptr->ptr_parse->tmp);
-			free(ptr->ptr_parse->tmp);
-			ptr->ptr_parse->tmp = str;
-		}
-	}
-	// free(ptr->tmp);
-	ptr->tmp = ptr->ptr_parse->tmp;
-}
+// 	if (ptr->ptr_parse->flag_hash)
+// 	{
+// 		if (*ptr->form == 'x' && *ptr->ptr_parse->tmp != '0')
+// 		{
+// 			str = ft_strjoin("0x", ptr->ptr_parse->tmp);
+// 			free(ptr->ptr_parse->tmp);
+// 			ptr->ptr_parse->tmp = str;
+// 		}
+// 		if (*ptr->form == 'X' && *ptr->ptr_parse->tmp != '0')
+// 		{
+// 			str = ft_strjoin("0X", ptr->ptr_parse->tmp);
+// 			free(ptr->ptr_parse->tmp);
+// 			ptr->ptr_parse->tmp = str;
+// 		}
+// 		if (*ptr->form == 'o' && *ptr->ptr_parse->tmp != '0')
+// 		{
+// 			str = ft_strjoin("0", ptr->ptr_parse->tmp);
+// 			free(ptr->ptr_parse->tmp);
+// 			ptr->ptr_parse->tmp = str;
+// 		}
+// 	}
+// 	// free(ptr->tmp);
+// 	ptr->tmp = ptr->ptr_parse->tmp;
+// }
 
 
 void	ft_makestr(list *ptr)

@@ -58,5 +58,6 @@ void	ft_makedot(list *ptr);
 void	ft_makewidth_2(list *ptr);
 void	ft_makewidth(list *ptr);
 void	ft_makedot_oxu(list *ptr);
+void	ft_makewidth_oxu(list *ptr);
 
 #endif
