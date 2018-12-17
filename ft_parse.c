@@ -42,9 +42,9 @@ void	ft_parse(list *ptr)
 	// ft_putstr("\n");
 	// ft_putendl("");
 	ft_find_type(ptr);
-	// ptr->str = ptr->tmp;
+	ptr->str = ptr->tmp;
 	ft_copy(ptr);
-	// free(ptr->str);
+	free(ptr->str);
 
 	// ft_putnbr(ptr->ptr_parse->flag_width);
 
@@ -52,4 +52,5 @@ void	ft_parse(list *ptr)
 	// ft_putendl(ft_itoa(ptr->ptr_parse->flag_dot));
 
 	free(str);
+	// free(ptr->tmp);
 }

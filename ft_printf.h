@@ -15,9 +15,9 @@ typedef	struct	list_parse
 	char		flag_mult;
 	char		flag_hash;
 	char		flag_space;
-	int			flag_dot;
-	int			flag_width;
-	int			flag_size;
+	intmax_t	flag_dot;
+	size_t		flag_width;
+	size_t		flag_size;
 	intmax_t	number;
 	uintmax_t	unumber;
 	char		*tmp;
@@ -28,7 +28,7 @@ typedef	struct	list
 {
 	list_parse	*ptr_parse;
 	char		buffer[1000];
-	int			count;
+	size_t		count;
 	char const	*form;
 	char const	*form_start;
 	char const	*form_orig;
@@ -55,5 +55,8 @@ void	preparetosize(list *ptr);
 void	upreparetosize(list *ptr);
 char	*ft_itoamax(intmax_t n);
 void	ft_makedot(list *ptr);
+void	ft_makewidth_2(list *ptr);
+void	ft_makewidth(list *ptr);
+void	ft_makedot_oxu(list *ptr);
 
 #endif

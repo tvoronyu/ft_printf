@@ -10,7 +10,9 @@ FILENAMES	=	ft_printf.c \
 				ft_type.c \
 				ft_itoamax.c \
 				pf_lib_1.c \
+				ft_makewidth.c \
 				ft_makedot.c \
+				ft_makedot_oxu.c \
 
 NAME = libftprintf.a
 
@@ -61,6 +63,7 @@ re: fclean all
 # 		ft_itoamax.c \
 # 		pf_lib_1.c \
 # 		ft_makedot.c \
+# 		ft_makewidth.c \
 
 # CC = gcc
 
@@ -68,7 +71,7 @@ re: fclean all
 
 # FLAGS = -I include/*.h -I libft/include/libft.h
 
-# # FLAGS = -Wall -Wextra -Werror -I include/*.h -I libft/include/libft.h
+# FLAGS = -Wall -Wextra -Werror -I include/*.h -I libft/include/libft.h
 
 # LIBFT = libft/libft.a
 

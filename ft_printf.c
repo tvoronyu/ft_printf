@@ -56,7 +56,7 @@ void	ft_search(list *ptr)
 int ft_printf(const char *format, ... )
 {
 	list 	ptr[1];
-	va_list	args;
+	// va_list	args;
 
 	ft_bzero(ptr, sizeof(list));
 	va_start(ptr->args, format);
@@ -92,24 +92,25 @@ int ft_printf(const char *format, ... )
 
 
 
-// int	main(int argc, char *argv[])
+// int	main(void)
 // {
-// 	int a = 2;
-// 	int b = 4;
+// 	// int a = 2;
+// 	// int b = 4;
 
-// 	argv = NULL;
-// 	argc = 0;
-// 	char *str;
+// 	// argv = NULL;
+// 	// argc = 0;
+// 	// char *str;
 
 
-// 	char temp[] = "1111222123";
+// 	// char temp[] = "1111222123";
 // 	// ft_printf("fefefef%%\n", 24);
 // 	// ft_printf("\n\nfefefef%d\n\n\n", 24, 42);
 // 	// ft_printf("%42.23L+- #f%42.23L+- #c%42.23L+- #s%42.23L+- #p%42.23L+- #d%42.23L+- #i%42.23L+- #o%42.23L+- #u%42.23L+- #x%42.23L+0- #0000000X%042.23L+- #X\n", 9223372036854775807);
-// 	// printf("%.5d\n", 1);
+// 	printf("@moulitest: %05.d %.0d", 0, 0);
 
-// 	ft_printf("%#x", 42);
+
+// 	ft_printf("@moulitest: %05.d %.0d", 0, 0);
 	
-// 	system("leaks a.out");
+// 	// system("leaks a.out");
 // 	return (0);
 // }

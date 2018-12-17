@@ -60,13 +60,8 @@ void	upreparetosize(list *ptr)
 	else
 		ptr->ptr_parse->unumber = va_arg(ptr->args, unsigned int);
 	makebase(ptr);
-	// ft_putchar(*ptr->form);
 	ptr->tmp = ptr->ptr_parse->tmp;
-	// ft_putnbr(ptr->ptr_parse->unumber);
-	// ft_copy(ptr);
-	// ft_putendl(ptr->ptr_parse->tmp);
-	// free(ptr->ptr_parse->tmp);
-	// ft_putendl(my_itoa_basemax(ptr->ptr_parse->unumber, 16, 0));
+	ft_makedot_oxu(ptr);
 }
 
 void	preparetosize(list *ptr)
@@ -87,6 +82,5 @@ void	preparetosize(list *ptr)
 		ptr->ptr_parse->number = va_arg(ptr->args, int);
 	makebase(ptr);
 	ptr->tmp = ptr->ptr_parse->tmp;
-	// ft_copy(ptr);
-	// free(ptr->ptr_parse->tmp);
+	ft_makedot(ptr);
 }
