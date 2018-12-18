@@ -44,7 +44,7 @@ void	ft_parse(list *ptr)
 	ft_find_type(ptr);
 	ptr->str = ptr->tmp;
 	ft_copy(ptr);
-	free(ptr->str);
+	// free(ptr->str);
 
 	// ft_putnbr(ptr->ptr_parse->flag_width);
 

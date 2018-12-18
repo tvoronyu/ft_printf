@@ -55,7 +55,6 @@ void	preparetosize(list *ptr);
 void	upreparetosize(list *ptr);
 char	*ft_itoamax(intmax_t n);
 void	ft_makedot(list *ptr);
-void	ft_makewidth_2(list *ptr);
 void	ft_makewidth(list *ptr);
 void	ft_makedot_oxu(list *ptr);
 void	ft_makewidth_oxu(list *ptr);

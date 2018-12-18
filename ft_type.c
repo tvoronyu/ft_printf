@@ -23,110 +23,27 @@ void	ft_makediff(list *ptr)
 
 }
 
-void	ft_makewidth_2(list *ptr)
+void	ft_makestr_dot(list *ptr)
 {
-	char	*str;
-	size_t	i;
+	long long	i;
+	// char		*tmp;
+	// char		*tmp_2;
 
 	i = 0;
-	if (ptr->ptr_parse->flag_width >= ft_strlen(ptr->ptr_parse->tmp))
+	if (ptr->ptr_parse->flag_dot != 0)
 	{
-		if (ptr->ptr_parse->flag_minus)
-		{
-			str = ft_strnew(ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp));
-			while ((ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp)) > i)
-			{
-				str[i] = ' ';
-				i++;
-			}
-			ptr->tmp = ft_strjoin(ptr->ptr_parse->tmp, str);
-			free(str);
-			str = ptr->tmp;
-			ft_copy(ptr);
-			free(str);
-		}
-		else if (ptr->ptr_parse->flag_zero)
-		{
-			if (*ptr->ptr_parse->tmp == '-')
-			{
-				str = ft_strnew((ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp)) + 1);
-				str[0] = '-';
-				while ((ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp)) > i++)
-					str[i] = '0';
-				ptr->tmp = ft_strjoin(str, ptr->ptr_parse->tmp + 1);
-			}
-			else
-			{
-				str = ft_strnew(ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp));
-				while ((ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp)) > i)
-				{
-					str[i] = '0';
-					i++;
-				}
-				ptr->tmp = ft_strjoin(str, ptr->ptr_parse->tmp);
-			}
-			free(str);
-			str = ptr->tmp;
-			ft_copy(ptr);
-			free(str);
-		}
-		else
-		{
-			str = ft_strnew(ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp));
-			while ((ptr->ptr_parse->flag_width - ft_strlen(ptr->ptr_parse->tmp)) > i)
-			{
-				str[i] = ' ';
-				i++;
-			}
-			ptr->tmp = ft_strjoin(str, ptr->ptr_parse->tmp);
-			free(str);
-			str = ptr->tmp;
-			ft_copy(ptr);
-			free(str);
-		}
+		// 
 	}
-	else
-	{
-		ptr->tmp = ptr->ptr_parse->tmp;
-		ft_copy(ptr);
-	}
-	// free(ptr->ptr_parse->tmp);
 }
-
-// void	ft_make_hash(list *ptr)
-// {
-// 	char *str;
-
-// 	if (ptr->ptr_parse->flag_hash)
-// 	{
-// 		if (*ptr->form == 'x' && *ptr->ptr_parse->tmp != '0')
-// 		{
-// 			str = ft_strjoin("0x", ptr->ptr_parse->tmp);
-// 			free(ptr->ptr_parse->tmp);
-// 			ptr->ptr_parse->tmp = str;
-// 		}
-// 		if (*ptr->form == 'X' && *ptr->ptr_parse->tmp != '0')
-// 		{
-// 			str = ft_strjoin("0X", ptr->ptr_parse->tmp);
-// 			free(ptr->ptr_parse->tmp);
-// 			ptr->ptr_parse->tmp = str;
-// 		}
-// 		if (*ptr->form == 'o' && *ptr->ptr_parse->tmp != '0')
-// 		{
-// 			str = ft_strjoin("0", ptr->ptr_parse->tmp);
-// 			free(ptr->ptr_parse->tmp);
-// 			ptr->ptr_parse->tmp = str;
-// 		}
-// 	}
-// 	// free(ptr->tmp);
-// 	ptr->tmp = ptr->ptr_parse->tmp;
-// }
-
 
 void	ft_makestr(list *ptr)
 {
-	if ((ptr->tmp = va_arg(ptr->args, char*)))
-		ft_copy(ptr);
+	ptr->tmp = va_arg(ptr->args, char*);
+	if (ptr->tmp == NULL)
+		ptr->tmp = ft_strdup("(null)");
+	else
+		ft_makestr_dot(ptr);
+	ft_copy(ptr);
 }
 
 void	ft_find_type(list *ptr)
@@ -148,8 +65,8 @@ void	ft_find_type(list *ptr)
 		// else if (*ptr->form == 'p')
 		// 	ft_putchar('p');
 		// 	// res += ft_makeptr(printmemory(ar), full, t);
-		// else if (*ptr->form == 's')
-		// 	ft_makestr(ptr);
+		else if (*ptr->form == 's')
+			ft_makestr(ptr);
 		// // else if (*ptr->form == '%')
 		// // 	ft_putchar('g');
 		// else
