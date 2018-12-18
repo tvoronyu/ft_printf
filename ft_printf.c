@@ -103,10 +103,11 @@ int	main(void)
 	// ft_printf("fefefef%%\n", 24);
 	// ft_printf("\n\nfefefef%d\n\n\n", 24, 42);
 	// ft_printf("%42.23L+- #f%42.23L+- #c%42.23L+- #s%42.23L+- #p%42.23L+- #d%42.23L+- #i%42.23L+- #o%42.23L+- #u%42.23L+- #x%42.23L+0- #0000000X%042.23L+- #X\n", 9223372036854775807);
-	// printf("%10.1s is a string", "this");
+	// printf("%10.2s is a string\n", "this");
 
 
-	ft_printf("%5.2s is a string", "this");
+	ft_printf("%f", 3.123);
+
 	
 	// system("leaks a.out");
 	return (0);

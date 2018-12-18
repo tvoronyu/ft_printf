@@ -74,7 +74,7 @@ OBJ = $(SRC:.c=.o)
 
 FLAGS = -I include/*.h -I libft/include/libft.h
 
-FLAGS = -Wall -Wextra -Werror -I include/*.h -I libft/include/libft.h
+FLAGS = -I include/*.h -I libft/include/libft.h
 
 LIBFT = libft/libft.a
 
