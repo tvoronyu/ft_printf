@@ -107,6 +107,7 @@ int	main(void)
 
 
 	ft_printf("%f", 3.123);
+	
 
 	
 	// system("leaks a.out");
