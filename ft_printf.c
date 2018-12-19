@@ -89,27 +89,13 @@ int ft_printf(const char *format, ... )
 
 
 
-int	main(void)
-{
-	// int a = 2;
-	// int b = 4;
+// int	main(void)
+// {
 
-	// argv = NULL;
-	// argc = 0;
-	// char *str;
-
-
-	// char temp[] = "1111222123";
-	// ft_printf("fefefef%%\n", 24);
-	// ft_printf("\n\nfefefef%d\n\n\n", 24, 42);
-	// ft_printf("%42.23L+- #f%42.23L+- #c%42.23L+- #s%42.23L+- #p%42.23L+- #d%42.23L+- #i%42.23L+- #o%42.23L+- #u%42.23L+- #x%42.23L+0- #0000000X%042.23L+- #X\n", 9223372036854775807);
-	// printf("%10.2s is a string\n", "this");
-
-
-	ft_printf("%f", 23.5434);
+// 	ft_printf("%f", 23.5434);
 
 
 	
-	// system("leaks a.out");
-	return (0);
-}
+// 	// system("leaks a.out");
+// 	return (0);
+// }
