@@ -51,22 +51,31 @@
 
 NAME = a.out
 
-SRC = ft_printf.c \
-		ft_itoa_base.c \
-		ft_atoi_base.c \
-		ft_lowercase.c \
-		ft_uppercase.c \
-		ft_parse.c \
-		ft_flag.c \
-		ft_modificator.c \
-		ft_size.c \
-		ft_type.c \
-		ft_itoamax.c \
-		pf_lib_1.c \
-		ft_makedot.c \
-		ft_makewidth.c \
-		ft_makedot_oxu.c \
-		ft_makewidth_oxu.c \
+SRC = ft_printf.c 				\
+		ft_itoa_base.c 			\
+		ft_atoi_base.c 			\
+		ft_lowercase.c 			\
+		ft_uppercase.c 			\
+		ft_parse.c 				\
+		ft_flag.c 				\
+		ft_modificator.c 		\
+		ft_size.c 				\
+		ft_type.c 				\
+		ft_itoamax.c 			\
+		pf_lib_1.c 				\
+		ft_makedot.c 			\
+		ft_makewidth.c 			\
+		ft_makedot_oxu.c 		\
+		ft_makewidth_oxu.c 		\
+		ft_join.c				\
+		ft_float.c				\
+		ft_float_2.c			\
+		ft_float_check.c		\
+		ft_float_round.c		\
+		ft_ftoa.c				\
+		ft_lib_additional.c		\
+		ft_lib_additional_2.c	\
+		ft_str_mul_div.c		\
 
 CC = gcc
 

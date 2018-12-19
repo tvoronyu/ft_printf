@@ -106,8 +106,8 @@ int	main(void)
 	// printf("%10.2s is a string\n", "this");
 
 
-	ft_printf("%f", 3.123);
-	
+	ft_printf("%f", 23.5434);
+
 
 	
 	// system("leaks a.out");

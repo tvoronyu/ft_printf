@@ -6,6 +6,7 @@
 # include <stdio.h>
 # include "libft/libft.h"
 # include <wchar.h>
+# define BUFF_SIZE 4096
 
 typedef	struct	list_parse
 {
@@ -21,6 +22,13 @@ typedef	struct	list_parse
 	intmax_t	number;
 	uintmax_t	unumber;
 	char		*tmp;
+	int    len;
+	int	len_full;
+	int  		precision_field;
+	char		*s;
+	int 		i;
+	int 		dot;
+	char		str_full[BUFF_SIZE];
 
 }				list_parse;
 
@@ -58,5 +66,38 @@ void	ft_makedot(list *ptr);
 void	ft_makewidth(list *ptr);
 void	ft_makedot_oxu(list *ptr);
 void	ft_makewidth_oxu(list *ptr);
+char			*ft_float(char *str_ptr, list *ptr);
+unsigned long	ft_mantisa(char *str, int *exponent);
+int				ft_exponent(char *str);
+char	*ft_float_add_exponent(char *str, list *ptr, int count, char type);
+int		ft_float_dot(list *ptr);
+char	*ft_float_binary(unsigned long *ptr);
+char	*ft_float_add_minus(char *str, list *ptr);
+int		ft_float_minus(long double *n);
+char	*ft_float_check(char *str, list *ptr);
+char	*ft_float_infinite_zero(char *str, list *ptr);
+char	*ft_my_strdup(const char *s, list *ptr);
+char	*ft_round_float(char *str, list *ptr);
+char	*ft_round_float_2(char *str, list *ptr);
+char	*ft_ftoa(double n, list *ptr);
+char	*ft_ftoa_precision(char *str, list *ptr);
+char	*ft_ftoa_precision2(char *new, char *str, list *ptr, int af);
+void	ft_expand(char **form, list *ptr);
+void	ft_my_strcat(list *ptr, char *s1, int len);
+char	*ft_str_join_char_free(char *s1, int len, char c);
+char	*ft_str_join_free(char *s1, char *s2, int len1, int len2);
+char	*ft_str_div_two(char *s, int *len);
+int		ft_dot(int *dot, char s_i, char *s);
+char	*ft_pow_two(int pow, list *ptr);
+char	*ft_str_mul_two(char *s, int *len);
+char	*ft_cut(char *str, int *len);
+int			ft_nochar_index(char *str, char c1, char c2);
+int			ft_char_index(char *str, char c);
+int			ft_numcount_base_unsign(unsigned long n, int base);
+int			ft_numcount_base_sign(long n, int base);
+int		ft_minus_2(int *pow);
+int		ft_len_chr_str(const char *s, int start, char *sub);
+int		ft_lenchr(const char *s, int *start, char c);
+int		ft_str_chr_all(const char *str, char c);
 
 #endif

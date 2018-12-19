@@ -73,16 +73,17 @@ void	ft_makestr(list *ptr)
 	ft_copy(ptr);
 }
 
+
+void	fefe(char *str)
+{
+	printf("%s\n", str);
+}
+
 void	ft_find_type(list *ptr)
 {
-	// if (*ptr->form == 'S' || (*ptr->form == 's' && ptr->ptr_parse->flag_size == 4))
-	// 	ft_putchar('S');
-	// else
-	// {
-	float f;
-	int i;
+	double f;
 	char *tmp;
-	float n;
+
 		if (*ptr->form == 'd' || *ptr->form == 'i')
 			preparetosize(ptr);
 			// res += ft_makeprintbl(preparetosize(full[2][0], ar, t), full, t);
@@ -103,16 +104,8 @@ void	ft_find_type(list *ptr)
 			ft_makestr(ptr);
 		else if (*ptr->form == 'f')
 			{
-				
-
 				f = va_arg(ptr->args, double);
-				printf("%f\n", f);
-				i = f;
-				n = f - i;
-				n = f >> 1;
-				printf("%f\n", n);
-				tmp = ft_strjoin(ft_strjoin(ft_itoa(i), "."), ft_itoa(n));
-				ptr->tmp = tmp;
+				ft_putendl(ft_ftoa(f, ptr));
 			}
 		// // else if (*ptr->form == '%')
 		// // 	ft_putchar('g');
