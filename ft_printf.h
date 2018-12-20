@@ -57,7 +57,7 @@ void	ft_parse(list *ptr);
 void	ft_copy(list *ptr);
 void	ft_find_flag(list *ptr);
 void	ft_modificator(list *ptr);
-void	ft_find_size(list *ptr);
+int	ft_find_size(list *ptr);
 void	ft_find_type(list *ptr);
 void	preparetosize(list *ptr);
 void	upreparetosize(list *ptr);

@@ -17,7 +17,7 @@ void	ft_parse(list *ptr)
 // ft_putendl(ptr->str);
 	ft_modificator(ptr);
 
-	ft_find_size(ptr);
+	ptr->ptr_parse->flag_size = ft_find_size(ptr);
 
 	// ft_putendl(ptr->str);
 

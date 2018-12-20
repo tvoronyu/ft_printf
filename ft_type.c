@@ -1,23 +1,38 @@
 #include "ft_printf.h"
 
+
+void	ft_makeproc(list *ptr)
+{
+	char		*tmp;
+
+	if (ptr->ptr_parse->flag_width > 1)
+	{
+		tmp = ft_strnew(ptr->ptr_parse->flag_width - 1);
+		if (ptr->ptr_parse->flag_zero && !ptr->ptr_parse->flag_minus)
+		{
+			ft_memset(tmp, '0', ptr->ptr_parse->flag_width - 1);
+			ptr->tmp = ft_strjoin(tmp, "%");
+		}
+		else if (ptr->ptr_parse->flag_minus)
+		{
+			ft_memset(tmp, ' ', ptr->ptr_parse->flag_width - 1);
+			ptr->tmp = ft_strjoin("%", tmp);
+		}
+		else
+		{
+			ft_memset(tmp, ' ', ptr->ptr_parse->flag_width - 1);
+			ptr->tmp = ft_strjoin(tmp, "%");
+		}
+	}
+	else if (ptr->ptr_parse->flag_width == 1 || !ptr->ptr_parse->flag_width)
+		ptr->tmp = ft_strdup("%");
+}
+
 void	ft_makediff(list *ptr)
 {
-	// char	symbol;
-	// size_t	counter;
 
-	// counter = 0;
-	// if (*ptr->form == 'c')
-	// 	ptr->buffer[ptr->count++] = va_arg(ptr->args, int);
-	// symbol = ' ';
-	// if (ptr->ptr_parse->flag_zero == '0' && ptr->ptr_parse->flag_space)
-	// 	symbol = '0';
-	// ptr->ptr_parse->flag_width--;
-	// while (counter++ < ptr->ptr_parse->flag_width)
-	// 	ptr->buffer[ptr->count++] = symbol;
-
-
-
-
+	ft_putendl(ptr->form);
+	
 }
 
 void	ft_makewidth_str(list *ptr)
@@ -73,15 +88,10 @@ void	ft_makestr(list *ptr)
 	ft_copy(ptr);
 }
 
-
-void	fefe(char *str)
-{
-	printf("%s\n", str);
-}
-
 void	ft_find_type(list *ptr)
 {
 	double f;
+	long double ff;
 	char *tmp;
 
 		if (*ptr->form == 'd' || *ptr->form == 'i')
@@ -94,7 +104,8 @@ void	ft_find_type(list *ptr)
 		else if (*ptr->form == 'c')
 			{
 				ptr->tmp = ft_strnew(1);
-				ptr->tmp[0] = (va_arg(ptr->args, int));
+				// ptr->tmp[0] = (va_arg(ptr->args, int));
+				write(1, "\0", 1);
 			}
 		// 	// res += ft_makewprintbl(ft_makewchar(va_arg(ar, wchar_t)), full, t);
 		// else if (*ptr->form == 'p')
@@ -104,11 +115,21 @@ void	ft_find_type(list *ptr)
 			ft_makestr(ptr);
 		else if (*ptr->form == 'f')
 			{
-				f = va_arg(ptr->args, double);
-				ft_putendl(ft_ftoa(f, ptr));
+				if (ptr->ptr_parse->flag_size == 7)
+				{
+					ff = va_arg(ptr->args, double);
+					ptr->tmp = ft_ftoa(ff, ptr);
+					// write(1, "fe", 2);
+				}
+				else
+				{
+					f = va_arg(ptr->args, double);
+					ptr->tmp = ft_ftoa(f, ptr);
+					// write(1, "fe", 2);
+				}
 			}
-		// // else if (*ptr->form == '%')
-		// // 	ft_putchar('g');
+		else if (*ptr->form == '%')
+			ft_makeproc(ptr);
 		else
 			ft_makediff(ptr);
 	// }

@@ -2,11 +2,12 @@
 
 void	ft_copy(list *ptr)
 {
+	// ft_memcpy()
 	while (ptr->tmp && *ptr->tmp && *ptr->tmp != '\0')
 	{
 		if (ptr->count == 1000)
 		{
-			ft_putstr(ptr->buffer);
+			write(1, ptr->buffer, ft_strlen(ptr->buffer));
 			ptr->res += 1000;
 			ft_bzero(ptr->buffer, 1000);
 			ptr->count = 0;
@@ -24,16 +25,18 @@ int	ft_test2(list *ptr)
 		
 		if (!ft_strchr("#-+ jzhlL*.012,3456789", *ptr->form))
 			break ;
-		if (!*ptr->form){
-			write(1, "Error", 1);
-			return (1);
-		}
-		ptr->form++;
-		if (*ptr->form && ft_strchr("diouxXpcsf", *ptr->form))
+		// if (!*ptr->form)
+		// {
+		// 	write(1, "Error", 1);
+		// 	return (1);
+		// }
+		
+		if (*ptr->form && ft_strchr("diouxXpcsf%", *ptr->form))
 			return (2);
+		ptr->form++;
 	}
-	if (*ptr->form && !ft_strchr("diouxXpcsf", *ptr->form))
-			ptr->buffer[ptr->count++] = *ptr->form;
+	// if (*ptr->form && !ft_strchr("diouxXpcsf", *ptr->form))
+	// 		ptr->buffer[ptr->count++] = *ptr->form;
 	if (*ptr->form == '\0')
 		return (0);
 	return (2);
@@ -42,6 +45,7 @@ int	ft_test2(list *ptr)
 void	ft_search(list *ptr)
 {
 	int tmp;
+
 	ptr->form_start = ptr->form;
 	if ((tmp = ft_test2(ptr)) == 1)
 		return ;
@@ -64,7 +68,7 @@ int ft_printf(const char *format, ... )
 		if (!ft_strchr(format, '%'))
 		{
 			ptr->res = ft_strlen(format);
-			ft_putstr(format);
+			write(1, format, ft_strlen(format));
 			return (ptr->res);
 		}
 		if (*ptr->form == '%')
@@ -76,12 +80,12 @@ int ft_printf(const char *format, ... )
 			ptr->buffer[ptr->count++] = *ptr->form;
 		if (ptr->count == 1000)
 		{
-			ft_putstr(ptr->buffer);
+			write(1, ptr->buffer, ft_strlen(ptr->buffer));
 			ptr->count = 0;
 		}
 		ptr->form++;
 	}
-	ft_putstr(ptr->buffer);
+	write(1, ptr->buffer, ft_strlen(ptr->buffer));
 	ptr->res += ft_strlen(ptr->buffer);
 	va_end(ptr->args);
 	return (ptr->res);
@@ -89,13 +93,15 @@ int ft_printf(const char *format, ... )
 
 
 
-// int	main(void)
-// {
+int	main(void)
+{
 
-// 	ft_printf("%f", 23.5434);
+	ft_printf("@moulitest: %c", 0);
+	printf("@moulitest: %c", 0);
+	// printf("tes%-10%%dtet", 23);
 
 
 	
-// 	// system("leaks a.out");
-// 	return (0);
-// }
+	// system("leaks a.out");
+	return (0);
+}
