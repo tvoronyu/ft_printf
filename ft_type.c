@@ -93,6 +93,7 @@ void	ft_find_type(list *ptr)
 	double f;
 	long double ff;
 	char *tmp;
+	char str[1];
 
 		if (*ptr->form == 'd' || *ptr->form == 'i')
 			preparetosize(ptr);
@@ -104,8 +105,9 @@ void	ft_find_type(list *ptr)
 		else if (*ptr->form == 'c')
 			{
 				ptr->tmp = ft_strnew(1);
-				// ptr->tmp[0] = (va_arg(ptr->args, int));
-				write(1, "\0", 1);
+				ptr->tmp[0] = (va_arg(ptr->args, int));
+				str[0] = 0;
+				// write(1, str, 1);
 			}
 		// 	// res += ft_makewprintbl(ft_makewchar(va_arg(ar, wchar_t)), full, t);
 		// else if (*ptr->form == 'p')

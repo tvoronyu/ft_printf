@@ -85,7 +85,9 @@ int ft_printf(const char *format, ... )
 		}
 		ptr->form++;
 	}
-	write(1, ptr->buffer, ft_strlen(ptr->buffer));
+	ptr->buffer[11] = 0;
+	write(1, ptr->buffer, 15);
+	// printf("%d", ptr->buffer[11]);
 	ptr->res += ft_strlen(ptr->buffer);
 	va_end(ptr->args);
 	return (ptr->res);
@@ -96,8 +98,8 @@ int ft_printf(const char *format, ... )
 int	main(void)
 {
 
-	ft_printf("@moulitest: %c", 0);
-	printf("@moulitest: %c", 0);
+	ft_printf("@moulitest: %c123", 0);
+	// printf("@moulitest: %c123", 0);
 	// printf("tes%-10%%dtet", 23);
 
 
